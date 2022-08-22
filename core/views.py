@@ -210,27 +210,6 @@ class CheckoutView(View):
             return redirect("core:order-summary")
 
 
-# def home(request):
-#     context = {
-#         'items': Item.objects.all()
-#     }
-#     return render(request, "index.html", context)
-#
-#
-# def products(request):
-#     context = {
-#         'items': Item.objects.all()
-#     }
-#     return render(request, "product-detail.html", context)
-#
-#
-# def shop(request):
-#     context = {
-#         'items': Item.objects.all()
-#     }
-#     return render(request, "shop.html", context)
-
-
 @login_required
 def add_to_cart(request, slug):
     item = get_object_or_404(Item, slug=slug)
