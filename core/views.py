@@ -110,7 +110,6 @@ class HomeView(ListView):
     queryset = Item.objects.filter(is_active=True)
     context_object_name = 'items'
 
-
 class OrderSummaryView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
         try:
@@ -171,6 +170,7 @@ class CheckoutView(View):
 
     def post(self, *args, **kwargs):
         form = CheckoutForm(self.request.POST or None)
+        print(form.__dict__)
         try:
             order = Order.objects.get(user=self.request.user, ordered=False)
             print(self.request.POST)

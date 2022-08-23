@@ -13,6 +13,7 @@ def make_refund_accepted(modeladmin, request, queryset):
 make_refund_accepted.short_description = 'Update orders to refund granted'
 
 
+
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['user',
                     'ordered',
@@ -81,6 +82,7 @@ class ItemAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = [
         'title',
+        'image',
         'is_active'
     ]
     list_filter = ['title', 'is_active']
